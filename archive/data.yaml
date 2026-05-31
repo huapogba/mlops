@@ -1,0 +1,9 @@
+path: C:/Users/ADMIN/Desktop/crowd/archive
+train: ../train/images
+val: ../valid/images
+
+nc: 2
+names: ['head', 'person'] 
+
+
+

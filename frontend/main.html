@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowd Detection AI</title>
+    <link rel="stylesheet" href="/static/main.css">
+</head>
+
+<body>
+
+<h1>🚀 AI Crowd Detection System</h1>
+
+<div class="container">
+
+    <div class="sidebar">
+        <button onclick="showTab('camera', this)" class="active">📡 Camera Live</button-->
+        <button onclick="showTab('history', this)">📜 Lịch sử Log</button-->
+        <button onclick="showTab('image', this)">🖼 Ảnh phân tích</button>
+        <button onclick="showTab('video', this)">🎥 Video File</button>
+    </div>
+
+    <div class="content">
+
+        <div id="camera" class="tab active">
+            <div class="add-camera">
+              <input type="text" id="camNameInput" placeholder="Nhập tên Camera (ví dụ: Cổng chính)">
+              <input type="text" id="rtspInput" placeholder="Nhập RTSP URL (ví dụ: rtsp://...)">
+              <button onclick="addCamera()">+ Add Camera</button>
+            </div>
+            <div id="cameraGrid" class="camera-grid"></div>
+        </div>
+
+        <div id="history" class="tab">
+            <div class="header-flex">
+              <h2>📜 Lịch sử phát hiện người</h2>
+              <div class="search-box">
+                   <input type="text" id="searchCameraName" placeholder="Nhập tên camera..." onkeyup="filterHistory()">
+                   <button class="refresh-btn" onclick="loadHistory()">🔄</button>
+             </div>
+            </div>
+    
+            <div id="historyList" class="history-grid">
+        </div>
+        </div>
+
+
+        <div id="image" class="tab">
+            <div class="control-panel">
+                <input type="file" id="imageInput" hidden>
+                <label for="imageInput" class="upload-btn">📁 Chọn ảnh từ máy tính</label>
+            </div>
+            
+            <div class="ai-display-box">
+                <canvas id="imageCanvas"></canvas>
+            </div>
+            
+            <div class="counter-display">
+                <p id="imageCount">👥 Total Verified: 0</p>
+            </div>
+        </div>
+
+        <div id="video" class="tab">
+            <div class="control-panel">
+                <input type="file" id="videoInput" hidden>
+                <label for="videoInput" class="upload-btn">🎥 Chọn file Video</label>
+            </div>
+
+            <div class="ai-display-box">
+                <div class="video-wrapper">
+                    <video id="videoPlayer" controls></video>
+                    <canvas id="videoCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="counter-display">
+                <p id="videoCount">👥 Count: 0</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/static/main.js"></script>
+
+</body>
+</html>

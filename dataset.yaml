@@ -1,0 +1,5 @@
+train: data/versions/latest/images/train
+val: data/versions/latest/images/val
+
+nc: 2
+names: ["person", "head"]

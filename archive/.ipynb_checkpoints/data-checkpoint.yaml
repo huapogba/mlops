@@ -1,0 +1,9 @@
+path: .
+train: ../train/images
+val: ../valid/images
+
+nc: 2
+names: ['head', 'person'] 
+
+
+

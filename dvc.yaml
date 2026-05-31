@@ -1,0 +1,36 @@
+stages:
+  #prepare:
+   # cmd: python backend/prepare_data.py
+    #deps:
+     # - backend/prepare_data.py
+      #- static/history
+    #outs:
+     # - data/versions/latest
+
+  train:
+    cmd: python backend/train.py
+    deps:
+      - backend/train.py
+      - dataset.yaml
+      - data/versions
+    #outs:
+      #- runs/detect/train_history/
+          
+      #- model/last.pt
+  evaluate:
+    cmd: python backend/evaluate.py
+    deps:
+      - backend/evaluate.py
+      - current_model.txt  
+      - data/versions
+    metrics:
+      - metrics.json
+
+  decide:
+    cmd: python backend/decide.py
+    deps:
+      - backend/decide.py
+      - metrics.json
+      - params.yaml
+    outs:
+      - decision.txt

@@ -1,0 +1,4 @@
+thresholds:
+  score_bad: 0.4
+  score_ok: 0.6
+

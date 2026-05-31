@@ -1,0 +1,83 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python backend/train.py
+    deps:
+    - path: backend/train.py
+      hash: md5
+      md5: 4e2c0809138f19a69c02e0c9d1296177
+      size: 7259
+      isexec: true
+    - path: data/versions
+      hash: md5
+      md5: 573cc1a113a410e147f8c428242ca485.dir
+      size: 351658
+      nfiles: 20
+    - path: dataset.yaml
+      hash: md5
+      md5: 5535737bdd7cf5fa0c99545cd199f1a6
+      size: 110
+      isexec: true
+  prepare:
+    cmd: python backend/prepare_data.py
+    deps:
+    - path: backend/prepare_data.py
+      hash: md5
+      md5: f4d920d0e340ca7fd8b32f0404f7f9b5
+      size: 5235
+      isexec: true
+    - path: static/history
+      hash: md5
+      md5: 38eeaae9f208974f161f268c2780b2cf.dir
+      size: 4417100
+      nfiles: 231
+    outs:
+    - path: data/versions/latest
+      hash: md5
+      md5: 13504c9585b870e0aa21e50dfee14dbe.dir
+      size: 2916593
+      nfiles: 258
+  evaluate:
+    cmd: python backend/evaluate.py
+    deps:
+    - path: backend/evaluate.py
+      hash: md5
+      md5: a5ca9257861dfeb4fb37847539f3aa3e
+      size: 2723
+      isexec: true
+    - path: current_model.txt
+      hash: md5
+      md5: 9a389d9049169bb89e0b3ab058ad9b44
+      size: 48
+    - path: data/versions
+      hash: md5
+      md5: 573cc1a113a410e147f8c428242ca485.dir
+      size: 351658
+      nfiles: 20
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 124ff839f2dac431331ae976f2f62668
+      size: 116
+  decide:
+    cmd: python backend/decide.py
+    deps:
+    - path: backend/decide.py
+      hash: md5
+      md5: 7cf28b0fa4e95d512cf7cd0754652ae7
+      size: 2757
+      isexec: true
+    - path: metrics.json
+      hash: md5
+      md5: 124ff839f2dac431331ae976f2f62668
+      size: 116
+    - path: params.yaml
+      hash: md5
+      md5: 9381a269dc55d97523ff3dbe54f885a1
+      size: 50
+      isexec: true
+    outs:
+    - path: decision.txt
+      hash: md5
+      md5: 1a2b633050fc54af4c36644070e08a95
+      size: 7

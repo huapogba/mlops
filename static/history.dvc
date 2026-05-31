@@ -1,0 +1,6 @@
+outs:
+- md5: 38eeaae9f208974f161f268c2780b2cf.dir
+  size: 4417100
+  nfiles: 231
+  hash: md5
+  path: history
