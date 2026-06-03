@@ -191,8 +191,8 @@ crowd/
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/crowd-detection.git
-cd crowd-detection
+git clone https://github.com/huapogba/mlops.git
+cd mlops
 
 # Build and start services
 docker-compose up -d
@@ -211,8 +211,8 @@ Services will be available at:
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/crowd-detection.git
-cd crowd-detection
+git clone https://github.com/huapogba/mlops.git
+cd mlops
 
 # Create virtual environment
 python -m venv venv
@@ -524,12 +524,12 @@ netstat -an | grep 8000
 
 ##  Key Performance Metrics
 
-| Metric | YOLOv8n | YOLOv8s | YOLOv8m |
-|--------|---------|---------|---------|
-| **mAP50** | ~37% | ~44% | ~50% |
-| **Inference Speed** | 1.2ms | 1.8ms | 4.7ms |
-| **GPU Memory** | 2GB | 3GB | 6GB |
-| **Tracking Accuracy** | ~85% | ~88% | ~90% |
+| Metric | YOLOv8s | 
+|--------|---------|
+| **mAP50** | 77.2% | 
+| **mAP50_90** | 48.7% |
+| **Recall** | 68.3% |
+| **Precision** | 86.1% |
 
 ---
 
