@@ -26,7 +26,7 @@ A real-time intelligent system for detecting and tracking crowds using advanced 
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
-- [Server Deployment](#server-deployment)
+- [Server Deployment](#server-deployment)(mở rộng phần thực hành)
 
 ---
 
