@@ -604,6 +604,7 @@ docker compose down
 - Reproducible environment.
 - Supports GPU-enabled inference.
 - Easy scaling and maintenance.
+- [link video demo ](https://drive.google.com/file/d/1rRRZJpywMJX6d_e0fCd_0hctc4xrX6K6/view?usp=drive_link)
 - ---
 
 ## Practical Course Extension
