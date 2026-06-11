@@ -26,6 +26,7 @@ A real-time intelligent system for detecting and tracking crowds using advanced 
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
+- [Server Deployment](#server-deployment)
 
 ---
 
@@ -550,6 +551,78 @@ Contributions are welcome! Please follow these steps:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+---
+
+## Server Deployment
+
+### Deployment Architecture
+
+```text
+Internet
+    │
+    ▼
+Ubuntu Server (GPU)
+    │
+    ├── Frontend Container
+    ├── FastAPI Container
+    ├── MySQL Container
+    ├── Prometheus Container
+    ├── Grafana Container
+    └── YOLOv8 Inference Service
+```
+
+### Deploy using Docker Compose
+
+Build and start all services:
+
+```bash
+docker compose up -d
+```
+
+Check running containers:
+
+```bash
+docker compose ps
+```
+
+View logs:
+
+```bash
+docker compose logs -f
+```
+
+Stop services:
+
+```bash
+docker compose down
+```
+
+### Deployment Benefits
+
+- One-command deployment.
+- Easy service management.
+- Reproducible environment.
+- Supports GPU-enabled inference.
+- Easy scaling and maintenance.
+- ---
+
+## Practical Course Extension
+
+### Additional Work for Practical Course
+
+The original theoretical project focused on developing and evaluating the AI crowd detection model.
+
+For the practical course, the system was extended with deployment and operational capabilities:
+
+- Containerization using Docker.
+- Service orchestration using Docker Compose.
+- Deployment on Ubuntu Server.
+- Monitoring with Prometheus and Grafana.
+- Production-ready architecture for real-world operation.
+
+### Main Contribution
+
+The main contribution of the practical course is transforming the AI prototype into a deployable system that can run continuously on a server environment with monitoring and service management capabilities.
 
 ##  Author
 
